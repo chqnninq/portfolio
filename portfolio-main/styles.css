@@ -458,6 +458,153 @@ hr {
   color: #fff;
 }
 
+/* Project Write-ups */
+.project-entry {
+  margin-bottom: 1rem;
+}
+
+.project-title {
+  font-family: 'Noto Serif', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.35rem;
+  line-height: 1.3;
+}
+
+.project-meta {
+  font-size: 0.85rem;
+  color: #a3a3a3;
+  margin-bottom: 1.25rem;
+}
+
+.project-body {
+  font-size: 0.95rem;
+  color: #d4d4d4;
+  line-height: 1.7;
+}
+
+.project-body p {
+  margin-bottom: 1.25rem;
+  text-align: justify;
+}
+
+.project-body h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-tools {
+  color: #a3a3a3;
+  font-size: 0.9rem;
+}
+
+.project-figure {
+  margin: 1.75rem 0;
+}
+
+.project-figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.project-figure figcaption {
+  font-size: 0.85rem;
+  color: #a3a3a3;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Resume */
+.resume-actions {
+  margin-bottom: 0.5rem;
+}
+
+.resume-actions a {
+  color: #d6b614;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.resume-actions a:hover {
+  color: #fff;
+}
+
+.resume-availability {
+  font-size: 0.9rem;
+  color: #a3a3a3;
+  margin-bottom: 2.5rem;
+}
+
+.resume-item {
+  margin-bottom: 2rem;
+}
+
+.resume-item-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.resume-role {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.resume-date {
+  font-size: 0.85rem;
+  color: #a3a3a3;
+  white-space: nowrap;
+}
+
+.resume-org {
+  font-size: 0.9rem;
+  color: #a3a3a3;
+  font-style: italic;
+  margin-bottom: 0.6rem;
+}
+
+.resume-item ul {
+  padding-left: 1.15rem;
+  margin: 0;
+}
+
+.resume-item li {
+  font-size: 0.93rem;
+  color: #d4d4d4;
+  line-height: 1.6;
+  margin-bottom: 0.4rem;
+}
+
+.resume-skills {
+  font-size: 0.93rem;
+  color: #d4d4d4;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.resume-skills strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Empty-state note */
+.blog-empty {
+  font-size: 0.95rem;
+  color: #a3a3a3;
+  font-style: italic;
+}
+
 /* Responsive Design */
 @media (max-width: 640px) {
   .container {
@@ -481,5 +628,14 @@ hr {
 
   .section-title {
     font-size: 1rem;
+  }
+
+  .project-title {
+    font-size: 1.2rem;
+  }
+
+  .resume-item-head {
+    flex-direction: column;
+    gap: 0.15rem;
   }
 }
