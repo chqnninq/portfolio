@@ -4,98 +4,128 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Channing Chen</title>
-  <meta name="description" content="Mechanical engineering student at UBC — precision instrumentation, metrology and hardware design." />
+  <meta name="description" content="Mechanical engineering student at UBC — mechanical design, materials, robotics and automation." />
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
 
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
   <div class="container">
-    <!-- Header -->
-    <header class="header">
-      <div class="profile-section">
-        <img src="/public/profile.jpg" alt="Channing Chen" class="profile" />
-        <div class="header-text">
-          <h1>Channing Chen</h1>
-          <p class="location">Vancouver, BC &middot; San Francisco, CA</p>
-        </div>
-      </div>
-
-      <nav class="nav-links">
-        <a href="/">Home</a>
-        <a href="/projects.html">Projects</a>
+    <header class="site-header">
+      <a class="site-name" href="/" aria-current="page">Channing Chen</a>
+      <nav class="site-nav">
+        <a href="/projects.html">Work</a>
+        <a href="/about.html">About</a>
         <a href="/resume.html">Resume</a>
-        <a href="/now.html">Now</a>
-        <a href="/blog.html">Blog</a>
         <a href="/contact.html">Contact</a>
       </nav>
-      <br>
-      <p class="bio">
-        I'm a mechanical engineering student at UBC who likes building instruments that measure things precisely.
-        Most recently I designed and built an automated profilometry system for UBC's robot-enabled Electron
-        Microscopy Laboratory, funded by an NSERC Undergraduate Student Research Award. I'm currently on the
-        engineering team at Colare in San Francisco.
-      </p>
-      <hr>
     </header>
 
-    <!-- Work Section -->
-    <section class="section">
-      <div class="project-list">
-        <p>Here's some of my selected work:</p>
+    <section class="intro">
+      <img class="intro-portrait" src="/public/profile.jpg" alt="Channing Chen" />
+      <h1>Channing Chen</h1>
+      <p class="intro-role">Mechanical Engineering @ UBC</p>
 
-        <div class="project-card">
-          <a href="https://www.colare.com/" target="_blank" rel="noopener noreferrer">Colare</a>
-          <div class="line-separator"></div>
-          <div class="project-description">Mechanical Engineering Intern in San Francisco. Designing technical assessments for mechanical engineering candidates and auditing how we build them.</div>
-        </div>
+      <p>
+        I design and build physical systems. Most of what I enjoy sits where a drawing turns into a part that
+        has to work &mdash; mechanical design and CAD, choosing the right material, and the manufacturing that
+        decides whether any of it survives contact with reality.
+      </p>
+      <p>
+        Lately that has meant instrumentation and automation: building a profilometer that measures surfaces to
+        the micron, and designing hardware for an electric race car. I'm also drawn to robotics and to vehicle
+        safety &mdash; the engineering problem of how a structure behaves when something goes wrong is, to me,
+        the most interesting one there is.
+      </p>
+    </section>
 
-        <div class="project-card">
-          <a href="/projects.html#profilometry">Profilometry System</a>
-          <div class="line-separator"></div>
-          <div class="project-description">An automated surface-topography scanner I built for UBC's robot-enabled Electron Microscopy Laboratory. NSERC USRA funded.</div>
-        </div>
+    <section class="record">
+      <h2 class="record-label">Currently</h2>
 
-        <div class="project-card">
-          <a href="https://www.expmicromech.com/" target="_blank" rel="noopener noreferrer">ExpMicroMech</a>
-          <div class="line-separator"></div>
-          <div class="project-description">Research Engineering Intern and Research Assistant with the Experimental Micromechanical Characterisation Research Group under Dr. Ben Britton.</div>
-        </div>
+      <div class="record-item">
+        <div class="record-title"><a href="https://www.colare.com/" target="_blank" rel="noopener noreferrer">Colare</a> &mdash; Mechanical Engineering Intern</div>
+        <div class="record-when">2026&ndash;27</div>
+        <p class="record-detail">
+          Building and calibrating the technical assessments mechanical engineers are evaluated on, and auditing
+          how we develop them. San Francisco.
+        </p>
+      </div>
 
-        <div class="project-card">
-          <a href="https://www.ubcformulaelectric.com/" target="_blank" rel="noopener noreferrer">UBC Formula Electric</a>
-          <div class="line-separator"></div>
-          <div class="project-description">Mechanical Designer on the FSAE team. Designed and waterproof-validated the driver interface dashboard enclosure for an electric race car.</div>
-        </div>
-
-        <div class="project-card">
-          <a href="https://www.mcs.bc.ca/" target="_blank" rel="noopener noreferrer">McCreary Centre Society</a>
-          <div class="line-separator"></div>
-          <div class="project-description">Student Researcher. Analyzed BC Adolescent Health Survey data in SPSS and presented policy recommendations to the BC Ministry of Education and Childcare.</div>
-        </div>
-
-        <div class="project-card">
-          <a href="https://www.bcjca.ca/" target="_blank" rel="noopener noreferrer">BC Junior Chess Association</a>
-          <div class="line-separator"></div>
-          <div class="project-description">Co-founder and President. Scaled to 75+ schools and 350+ students across BC with a team of 25 executives, and founded a free chess program for 150+ elementary students.</div>
-        </div>
+      <div class="record-item">
+        <div class="record-title">Mechanical Engineering, University of British Columbia</div>
+        <div class="record-when">&rarr; 2030</div>
+        <p class="record-detail">
+          BASc candidate. Presidential Scholars Award. Vancouver.
+        </p>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="last-updated">
-      Last updated: September 19, 2026
+    <section class="record">
+      <h2 class="record-label">Previously</h2>
+
+      <div class="record-item">
+        <div class="record-title"><a href="/projects.html#profilometry">Automated Profilometry System</a> &mdash; ExpMicroMech, UBC</div>
+        <div class="record-when">2026</div>
+        <p class="record-detail">
+          Designed and built a surface-topography scanner for UBC's robot-enabled Electron Microscopy Laboratory.
+          SolidWorks, Python instrument control, confocal metrology. Funded by an NSERC USRA.
+        </p>
+      </div>
+
+      <div class="record-item">
+        <div class="record-title"><a href="/projects.html#formula-electric">UBC Formula Electric</a> &mdash; Mechanical Designer</div>
+        <div class="record-when">2025&ndash;26</div>
+        <p class="record-detail">
+          Designed the V6.0 dashboard enclosure for the car's driver interface &mdash; split in two to clear the
+          print bed, slotted so it can't overconstrain the frame, and sealed to IPX5.
+        </p>
+      </div>
+
+      <div class="record-item">
+        <div class="record-title"><a href="/projects.html#bcahs">McCreary Centre Society</a> &mdash; Student Researcher</div>
+        <div class="record-when">2023&ndash;25</div>
+        <p class="record-detail">
+          Statistical analysis of the BC Adolescent Health Survey, ending in policy recommendations presented to
+          the BC Ministry of Education and Childcare.
+        </p>
+      </div>
+
+      <div class="record-item">
+        <div class="record-title"><a href="https://www.bcjca.ca/" target="_blank" rel="noopener noreferrer">BC Junior Chess Association</a> &mdash; Co-Founder &amp; President</div>
+        <div class="record-when">2022&ndash;25</div>
+        <p class="record-detail">
+          Grew it to 75+ schools and 350+ students across British Columbia with a team of 25, and started a free
+          chess program for 150+ elementary students.
+        </p>
+      </div>
+    </section>
+
+    <section class="record">
+      <h2 class="record-label">Elsewhere</h2>
+      <div class="prose">
+        <p>
+          <a href="/projects.html">Work</a> &middot; <a href="/about.html">About</a> &middot;
+          <a href="/resume.html">Resume</a> &middot; <a href="/contact.html">Contact</a>
+        </p>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="site-footer-links">
+        <a href="/now.html">Now</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/gallery.html">Gallery</a>
+        <a href="https://www.linkedin.com/in/channing-chen/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://x.com/chqnninq" target="_blank" rel="noopener noreferrer">X</a>
+      </div>
+      <div class="site-footer-meta">Vancouver, BC &middot; San Francisco, CA</div>
     </footer>
 
   </div>

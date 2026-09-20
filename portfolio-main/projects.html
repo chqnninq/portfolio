@@ -3,151 +3,163 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Projects - Channing Chen</title>
-  <meta name="description" content="Engineering projects — automated profilometry, FSAE hardware and more." />
+  <title>Work — Channing Chen</title>
+  <meta name="description" content="Engineering work: instrumentation and automation, Formula Electric, research." />
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
 
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
   <div class="container">
-    <!-- Header -->
-    <header class="header">
-      <div class="profile-section">
-        <img src="/public/profile.jpg" alt="Channing Chen" class="profile" />
-        <div class="header-text">
-          <h1>Channing Chen</h1>
-          <p class="location">Vancouver, BC &middot; San Francisco, CA</p>
-        </div>
-      </div>
-
-      <nav class="nav-links">
-        <a href="/">Home</a>
-        <a href="/projects.html">Projects</a>
+    <header class="site-header">
+      <a class="site-name" href="/">Channing Chen</a>
+      <nav class="site-nav">
+        <a href="/projects.html" aria-current="page">Work</a>
+        <a href="/about.html">About</a>
         <a href="/resume.html">Resume</a>
-        <a href="/now.html">Now</a>
-        <a href="/blog.html">Blog</a>
         <a href="/contact.html">Contact</a>
       </nav>
-      <br>
-      <p class="bio">
-        I'm a mechanical engineering student at UBC who likes building instruments that measure things precisely.
-        Most recently I designed and built an automated profilometry system for UBC's robot-enabled Electron
-        Microscopy Laboratory, funded by an NSERC Undergraduate Student Research Award. I'm currently on the
-        engineering team at Colare in San Francisco.
-      </p>
-      <hr>
     </header>
 
-    <!-- Projects Section -->
-    <section class="section">
-      <article class="project-entry" id="profilometry">
-        <h2 class="project-title">Automated Profilometry System</h2>
-        <p class="project-meta">UBC Electron Microscopy Laboratory &middot; ExpMicroMech &middot; 2026 &middot; NSERC USRA</p>
+    <div class="page-heading">
+      <h1>Work</h1>
+      <p>Instruments, vehicle hardware and research &mdash; what I built and what I actually did on it.</p>
+    </div>
 
-        <div class="project-body">
-          <p>
-            Over four months I designed and built an automated profilometry system to drive surface topography
-            mapping in UBC's robot-enabled Electron Microscopy Laboratory. The system lets a user map the surface
-            topography of a sample and measure how much material has been removed from it.
-          </p>
+    <article class="project-entry" id="profilometry">
+      <div class="project-index">01</div>
+      <h2 class="project-title">Automated Profilometry System</h2>
+      <p class="project-meta">Mechanical design &middot; Instrumentation &middot; Automation &middot; Metrology &mdash; ExpMicroMech, UBC, 2026</p>
 
-          <figure class="project-figure">
-            <img src="/images/profilometer.png" alt="The profilometry system on the optical bench, lit from within" />
-            <figcaption>The assembled profilometry system in the lab.</figcaption>
-          </figure>
-          <p>
-            Building it meant modelling components in SolidWorks and writing a Python control architecture to
-            integrate a confocal sensor and a precision stage into a motorized optical microscope. A Raspberry Pi
-            orchestrates the motorized movement of the camera and interferometer assembly; a Keyence CL-P015
-            confocal sensor handles the surface topography mapping, with data processed through Gwyddion and
-            linked back to the lab's robot-enabled SEM suite.
-          </p>
-          <p>
-            To prove the instrument was trustworthy, I ran metrology measurement DOEs and repeatability and
-            reproducibility studies to validate micron-level accuracy, and designed and manufactured the mounting
-            brackets for mechanical integration.
-          </p>
-          <p>
-            To show what it produces: a full topography scan and 3-D map of a Canadian quarter, measuring the
-            heights of 144,400 points across its surface (map credit: G. Francolini).
-          </p>
+      <figure class="project-figure project-figure--narrow">
+        <img src="/images/profilometer.png" alt="The assembled profilometry system on the optical bench, lit from within" />
+        <figcaption>The assembled system: confocal sensor and precision stage integrated into a motorized optical microscope.</figcaption>
+      </figure>
 
-          <figure class="project-figure">
-            <img src="/images/profilometry-scan.png" alt="Greyscale topography scan of a Canadian quarter beside two 3-D surface maps of the same coin" />
-            <figcaption>The profilometer's full topography scan and 3-D map of a Canadian quarter &mdash; 144,400 points across its surface (3-D map credit: G. Francolini).</figcaption>
-          </figure>
+      <div class="project-body">
+        <p>
+          Over four months I designed and built an automated profilometry system for UBC's robot-enabled Electron
+          Microscopy Laboratory. It lets a user map the surface topography of a sample and measure how much
+          material has been removed from it &mdash; a measurement the lab previously had no direct way to make.
+        </p>
+        <p>
+          I modelled the components in SolidWorks and wrote a Python control architecture that integrates a
+          confocal sensor and a precision stage into a motorized optical microscope. A Raspberry Pi orchestrates
+          the motion of the camera and interferometer assembly; a Keyence CL-P015 confocal sensor does the
+          topography mapping, with data processed through Gwyddion and linked back to the lab's robot-enabled SEM
+          suite. I designed and manufactured the mounting brackets that hold it all in alignment.
+        </p>
+        <p>
+          An instrument is only worth as much as its uncertainty budget, so I ran metrology measurement DOEs plus
+          repeatability and reproducibility studies to validate micron-level accuracy before handing it over.
+        </p>
+      </div>
 
-          <h3>Tools</h3>
-          <p class="project-tools">SolidWorks &middot; Python &middot; Raspberry Pi &middot; Keyence CL-P015 confocal sensor &middot; Gwyddion &middot; DOE / MSA</p>
+      <figure class="project-figure">
+        <img src="/images/profilometry-scan.png" alt="Greyscale topography scan of a Canadian quarter beside two 3-D surface maps of the same coin" />
+        <figcaption>A full topography scan and 3-D map of a Canadian quarter &mdash; 144,400 points across its surface. 3-D map credit: G. Francolini.</figcaption>
+      </figure>
 
-          <figure class="project-figure">
-            <img src="/images/expmicromech-team.png" alt="Channing Chen, Graeme Francolini and Dr. Ben Britton in the Electron Microscopy Laboratory" />
-            <figcaption>With Graeme Francolini and Dr. Ben Britton in the lab, on the last day of the project.</figcaption>
-          </figure>
+      <div class="project-body">
+        <h3>Tools</h3>
+        <p class="project-tools">SolidWorks &middot; Python &middot; Raspberry Pi &middot; Keyence CL-P015 confocal sensor &middot; Gwyddion &middot; DOE &amp; MSA</p>
+      </div>
 
-          <h3>Thanks</h3>
-          <p>
-            To Dr. Ben Britton and Graeme Francolini for the mentorship and supervision, the rest of ExpMicroMech
-            for continuous guidance, and NSERC for supporting the research.
-          </p>
-        </div>
-      </article>
+      <figure class="project-figure">
+        <img src="/images/expmicromech-team.png" alt="Channing Chen, Graeme Francolini and Dr. Ben Britton in the Electron Microscopy Laboratory" />
+        <figcaption>With Graeme Francolini and Dr. Ben Britton in the lab on the project's last day. The work was funded by an NSERC Undergraduate Student Research Award.</figcaption>
+      </figure>
+    </article>
 
-      <hr>
+    <article class="project-entry" id="formula-electric">
+      <div class="project-index">02</div>
+      <h2 class="project-title">Driver Interface Enclosure</h2>
+      <p class="project-meta">Mechanical design &middot; CAD &middot; Design for manufacture &mdash; UBC Formula Electric (FSAE), 2025&ndash;26</p>
 
-      <article class="project-entry" id="dashboard-enclosure">
-        <h2 class="project-title">Driver Interface Dashboard Enclosure</h2>
-        <p class="project-meta">UBC Formula Electric (FSAE) &middot; 2025&ndash;2026</p>
+      <figure class="project-figure">
+        <img src="/images/fsae-pdim-enclosure.jpg" alt="SolidWorks model of the V6.0 pDIM dashboard enclosure, showing the arched profile, switch and LED cutouts, and mounting tabs" />
+        <figcaption>The V6.0 pDIM enclosure in SolidWorks. The arch clears the chassis tubing; the tabs above and below locate it against the front hoop.</figcaption>
+      </figure>
 
-        <div class="project-body">
-          <p>
-            I designed the dashboard enclosure for the driver interface of UBC Formula Electric's electric race car
-            in SolidWorks, then validated it for waterproofing to keep it compliant with FSAE regulations. The work
-            ran inside a fast-paced, cross-functional team using Subversion and Altium CoDesigner to keep the
-            mechanical and electrical sides in sync.
-          </p>
+      <div class="project-body">
+        <p>
+          The pDIM enclosure houses the Driver Interface Module &mdash; the dashboard sitting directly in front of
+          the steering wheel, and the driver's main instrument while the car is running. My job on the chassis
+          sub-team was to design the housing that protects those electronics from water and impact without getting
+          in the way of the person using them.
+        </p>
+        <p>
+          For V6.0 we widened the enclosure to span the full length of the front hoop, which bought ergonomics
+          and internal space. It also made the part larger than the print bed on UBC's 3D printer. Rather than
+          compromise the width, I split the enclosure into left and right halves that join to form the finished
+          assembly &mdash; a manufacturing constraint driving the part architecture rather than the other way
+          around.
+        </p>
+        <p>
+          Most of the detail work was in how it mounts and seals. Extruded cuts at the centre and sides clear the
+          chassis tubes with a 1&nbsp;mm tolerance, and 25&nbsp;mm plastic spacers sit between the mounting tabs
+          and the enclosure tabs. Every enclosure tab except the middle one is a slot rather than a hole, so the
+          part locates precisely at one point and is free to take up tolerance everywhere else instead of being
+          overconstrained and fighting the frame.
+        </p>
+        <p>
+          Inside, I added separators between the LEDs to stop light bleeding from one indicator into its
+          neighbour; the vertical LED strip is left open and covered by a diffuser instead, since there the blend
+          is the point. The enclosure had to reach an IPX5 rating &mdash; surviving water jets from a 6.3&nbsp;mm
+          nozzle at any angle &mdash; and, because it encloses part of the tractive system, carry the ISO
+          7010-W012 high-voltage marking required by the rules.
+        </p>
+        <p>
+          The enclosure sits directly over boards the electrical sub-team was revising in parallel, so the
+          cutouts for displays, switches and connectors had to track their layout as it changed. We worked
+          through Altium CoDesigner and Subversion, which kept mechanical and electrical revisions moving
+          together rather than colliding at integration.
+        </p>
 
-          <h3>Tools</h3>
-          <p class="project-tools">SolidWorks &middot; Altium CoDesigner &middot; Subversion (SVN) &middot; 3-D Printing</p>
-        </div>
-      </article>
+        <h3>Tools</h3>
+        <p class="project-tools">SolidWorks &middot; Altium CoDesigner &middot; Subversion &middot; 3-D printing &middot; FSAE rules compliance</p>
+      </div>
+    </article>
 
-      <hr>
+    <article class="project-entry" id="bcahs">
+      <div class="project-index">03</div>
+      <h2 class="project-title">BC Adolescent Health Survey Analysis</h2>
+      <p class="project-meta">Data analysis &middot; Survey methodology &middot; Policy &mdash; McCreary Centre Society, 2023&ndash;25</p>
 
-      <article class="project-entry" id="bcahs">
-        <h2 class="project-title">BC Adolescent Health Survey Analysis</h2>
-        <p class="project-meta">McCreary Centre Society &middot; 2023&ndash;2025</p>
+      <div class="project-body">
+        <p>
+          I ran the statistical processing of the 2023 BC Adolescent Health Survey in IBM SPSS, working across a
+          large provincial dataset to find the patterns underneath the summary numbers. Alongside that I worked
+          with UBC researchers on the Middle Years Development Instrument, looking for places where the survey's
+          data collection could be tightened.
+        </p>
+        <p>
+          The analysis ended somewhere most analysis doesn't: I presented policy recommendations to the BC
+          Ministry of Education and Childcare, arguing for specific improvements to provincial school food
+          programs.
+        </p>
 
-        <div class="project-body">
-          <p>
-            I ran statistical processing of the 2023 BC Adolescent Health Survey in IBM SPSS, doing root-cause
-            analysis across large datasets. Alongside that I worked with UBC researchers on improving the Middle
-            Years Development Instrument provincial survey, looking for places its data collection could be
-            tightened. The work ended in a set of policy recommendations I presented to the BC Ministry of
-            Education and Childcare, advocating for improvements to provincial school food programs.
-          </p>
+        <h3>Tools</h3>
+        <p class="project-tools">IBM SPSS &middot; Survey methodology &middot; Root cause analysis</p>
+      </div>
+    </article>
 
-          <h3>Tools</h3>
-          <p class="project-tools">IBM SPSS &middot; Survey methodology &middot; Root cause analysis</p>
-        </div>
-      </article>
-    </section>
-
-    <!-- Footer -->
-    <footer class="last-updated">
-      Last updated: September 19, 2026
+    <footer class="site-footer">
+      <div class="site-footer-links">
+        <a href="/now.html">Now</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/gallery.html">Gallery</a>
+        <a href="https://www.linkedin.com/in/channing-chen/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://x.com/chqnninq" target="_blank" rel="noopener noreferrer">X</a>
+      </div>
+      <div class="site-footer-meta">Vancouver, BC &middot; San Francisco, CA</div>
     </footer>
   </div>
 </body>

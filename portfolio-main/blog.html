@@ -3,54 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Blog - Channing Chen</title>
-  <meta name="description" content="Notes on mechanical engineering, instrumentation and research" />
+  <title>Writing — Channing Chen</title>
+  <meta name="description" content="Notes on engineering, instrumentation and research." />
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
 
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
   <div class="container">
-    <!-- Header -->
-    <header class="header">
-      <div class="profile-section">
-        <img src="/public/profile.jpg" alt="Channing Chen" class="profile" />
-        <div class="header-text">
-          <h1>Channing Chen</h1>
-          <p class="location">Vancouver, BC &middot; San Francisco, CA</p>
-        </div>
-      </div>
-
-      <nav class="nav-links">
-        <a href="/">Home</a>
-        <a href="/projects.html">Projects</a>
+    <header class="site-header">
+      <a class="site-name" href="/">Channing Chen</a>
+      <nav class="site-nav">
+        <a href="/projects.html">Work</a>
+        <a href="/about.html">About</a>
         <a href="/resume.html">Resume</a>
-        <a href="/now.html">Now</a>
-        <a href="/blog.html">Blog</a>
         <a href="/contact.html">Contact</a>
       </nav>
-      <br>
-      <p class="bio">
-        I'm a mechanical engineering student at UBC who likes building instruments that measure things precisely.
-        Most recently I designed and built an automated profilometry system for UBC's robot-enabled Electron
-        Microscopy Laboratory, funded by an NSERC Undergraduate Student Research Award. I'm currently on the
-        engineering team at Colare in San Francisco.
-      </p>
-      <hr>
     </header>
 
-    <!-- Blog Section -->
+    <div class="page-heading">
+      <h1>Writing</h1>
+      <p>Occasional notes on things I've built and what they taught me.</p>
+    </div>
+
     <section class="section">
       <div class="blog-list">
         <p class="blog-empty">Nothing published yet. First post coming soon.</p>
@@ -65,9 +47,15 @@
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="last-updated">
-      Last updated: September 19, 2026
+    <footer class="site-footer">
+      <div class="site-footer-links">
+        <a href="/now.html">Now</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/gallery.html">Gallery</a>
+        <a href="https://www.linkedin.com/in/channing-chen/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://x.com/chqnninq" target="_blank" rel="noopener noreferrer">X</a>
+      </div>
+      <div class="site-footer-meta">Vancouver, BC &middot; San Francisco, CA</div>
     </footer>
   </div>
 </body>
