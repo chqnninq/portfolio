@@ -10,7 +10,6 @@ Site files live in [`portfolio-main/`](portfolio-main/).
 | --- | --- | --- |
 | `index.html` | `/` | Homepage — intro, Currently / Previously |
 | `projects.html` | `/projects.html` | **Work** — numbered project write-ups (linked as "Work" in the nav) |
-| `about.html` | `/about.html` | About |
 | `resume.html` | `/resume.html` | Resume, linking `Channing_Chen_Resume.pdf` |
 | `contact.html` | `/contact.html` | Email and social links |
 | `now.html` | `/now.html` | What I'm doing now (footer link) |

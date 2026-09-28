@@ -62,7 +62,7 @@ a {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.18em;
-  text-decoration-color: var(--rule);
+  text-decoration-color: var(--faint);
   transition: text-decoration-color 0.18s ease, color 0.18s ease, opacity 0.18s ease;
 }
 
@@ -112,10 +112,9 @@ hr {
 }
 
 .site-name {
-  font-size: 0.9375rem;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   white-space: nowrap;
 }
 
@@ -132,7 +131,6 @@ hr {
 .site-nav a {
   font-size: 0.9375rem;
   color: var(--muted);
-  text-decoration: none;
 }
 
 .site-nav a:hover {
@@ -164,6 +162,22 @@ hr {
   font-size: 1.0625rem;
   color: var(--muted);
   margin-bottom: 2.25rem;
+}
+
+.inline-logo {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.3em;
+  vertical-align: -0.14em;
+  border-radius: 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .inline-logo {
+    background: #fff;
+    padding: 1px;
+  }
 }
 
 .intro p + p {
@@ -357,7 +371,6 @@ hr {
 
 .project-card a {
   font-weight: 500;
-  text-decoration: none;
 }
 
 .project-card a:hover {
@@ -598,7 +611,6 @@ hr {
   line-height: 1.4;
   display: block;
   margin-bottom: 0.3rem;
-  text-decoration: none;
 }
 
 .blog-title:hover {
@@ -699,7 +711,6 @@ hr {
 .back-link {
   font-size: 0.9375rem;
   color: var(--muted);
-  text-decoration: none;
 }
 
 .back-link:hover {
@@ -830,7 +841,6 @@ hr {
 .site-footer a {
   font-size: 0.875rem;
   color: var(--muted);
-  text-decoration: none;
 }
 
 .site-footer a:hover {
@@ -878,9 +888,12 @@ hr {
     gap: 1.125rem;
   }
 
-  .site-nav a,
-  .site-name {
+  .site-nav a {
     font-size: 0.9375rem;
+  }
+
+  .site-name {
+    font-size: 1.125rem;
   }
 
   .intro h1 {
