@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Driver Interface Enclosure — Channing Chen</title>
+  <meta name="description" content="The V6.0 driver interface enclosure for UBC Formula Electric." />
+
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a class="site-name" href="/">Channing Chen</a>
+      <nav class="site-nav">
+        <a href="/projects.html" aria-current="page">Work</a>
+        <a href="/resume.html">Resume</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <p class="project-back"><a href="/projects.html" class="back-link">&larr; Work</a></p>
+
+    <article class="project-entry project-entry--page" id="formula-electric">
+      <h1 class="project-title">Driver Interface Enclosure</h1>
+      <p class="project-meta">UBC Formula Electric (FSAE)  &middot; 2025&ndash;26</p>
+
+      <figure class="project-figure">
+        <img src="/images/fsae-pdim-enclosure.jpg" alt="SolidWorks model of the V6.0 pDIM dashboard enclosure" />
+        <figcaption>The V6.0 pDIM enclosure in SolidWorks.</figcaption>
+      </figure>
+
+      <div class="project-body">
+        <p>
+          The pDIM enclosure houses the race car's Driver Interface Module, the dashboard sitting directly in front of
+          the steering wheel and the driver's main instrument while the car is running. My role on the chassis
+          sub-team was to design the component that protects this circuit board from water and impact.
+        </p>
+        <p>
+          Most of the detail work was in how it mounts and seals. Extruded cuts at the centre and sides clear the
+          chassis tubes with a 1&nbsp;mm tolerance, and 25&nbsp;mm plastic spacers sit between the mounting tabs
+          and the enclosure tabs.
+        </p>
+        <p>
+          Inside, I included separators between the LEDs to prevent light bleeding from one indicator into its
+          neighbour; the vertical LED strip is left open and covered by a diffuser instead, since there the blend
+          is the point. The enclosure had to reach an IPX5 rating, surviving water jets from a 6.3&nbsp;mm
+          nozzle at any angle.
+        </p>
+        <p>
+          The enclosure sits directly over boards the electrical sub-team was revising in parallel, so the
+          cutouts for displays, switches and connectors had to track their layout as it changed. We worked
+          through Altium CoDesigner and Subversion (SVN), which kept mechanical and electrical revisions moving
+          together rather than colliding at integration.
+        </p>
+
+        <h3>Tools</h3>
+        <p class="project-tools">SolidWorks &middot; Altium CoDesigner &middot; Subversion (SVN) &middot; 3-D Printing</p>
+      </div>
+    </article>
+
+    <footer class="site-footer">
+      <div class="site-footer-links">
+        <a href="/gallery.html">Gallery</a>
+        <a href="https://www.linkedin.com/in/channing-chen/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://x.com/chqnninq" target="_blank" rel="noopener noreferrer">X</a>
+      </div>
+      <div class="site-footer-meta">Vancouver, BC &middot; San Francisco, CA</div>
+    </footer>
+  </div>
+</body>
+</html>
