@@ -528,8 +528,8 @@ hr {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--faint);
-  margin-top: 3.5rem;
-  margin-bottom: 1.5rem;
+  margin-top: 1.75rem;
+  margin-bottom: 0.25rem;
 }
 
 .section-title:first-child {
@@ -552,6 +552,29 @@ hr {
    Resume page
    --------------------------------------------------------------- */
 
+.page-heading.resume-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  max-width: none;
+  margin-bottom: 2rem;
+}
+
+.resume-heading h1 {
+  margin-bottom: 0;
+}
+
+.section + .site-footer {
+  margin-top: 3.5rem;
+}
+
+.resume-download {
+  font-size: 0.9375rem;
+  white-space: nowrap;
+}
+
 .resume-actions {
   margin-bottom: 0.4rem;
   font-size: 0.9375rem;
@@ -564,7 +587,7 @@ hr {
 }
 
 .resume-item {
-  padding: 1.75rem 0;
+  padding: 1.25rem 0;
   border-top: 1px solid var(--rule-soft);
 }
 
@@ -596,12 +619,11 @@ hr {
 .resume-org {
   font-size: 0.9375rem;
   color: var(--muted);
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.6rem;
 }
 
 .resume-item ul {
   list-style: none;
-  max-width: var(--measure);
 }
 
 .resume-item li {
@@ -610,7 +632,7 @@ hr {
   line-height: 1.7;
   color: var(--muted);
   padding-left: 1.05rem;
-  margin-bottom: 0.45rem;
+  margin-bottom: 0.3rem;
 }
 
 .resume-item li:last-child {
@@ -632,7 +654,6 @@ hr {
   line-height: 1.7;
   color: var(--muted);
   margin-bottom: 0.5rem;
-  max-width: var(--measure);
 }
 
 .resume-skills:last-child {
