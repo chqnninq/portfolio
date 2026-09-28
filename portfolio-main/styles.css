@@ -157,7 +157,7 @@ hr {
   font-weight: 600;
   letter-spacing: -0.021em;
   line-height: 1.2;
-  margin-bottom: 0.4rem;
+  margin-bottom: 1.75rem;
 }
 
 .intro-role {
@@ -180,6 +180,11 @@ hr {
     background: #fff;
     padding: 1px;
   }
+}
+
+/* One line less space between the intro and the footer */
+.intro + .site-footer {
+  margin-top: 4.25rem;
 }
 
 .intro p + p {
@@ -977,6 +982,10 @@ hr {
   .site-footer,
   .last-updated {
     margin-top: 4rem;
+  }
+
+  .intro + .site-footer {
+    margin-top: 2.25rem;
   }
 }
 
