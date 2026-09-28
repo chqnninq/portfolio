@@ -13,7 +13,6 @@ Site files live in [`portfolio-main/`](portfolio-main/).
 | `projects/*.html` | `/projects/<slug>.html` | One page per project, opened from its tile on the Work page |
 | `resume.html` | `/resume.html` | Resume, linking `Channing_Chen_Resume.pdf` |
 | `contact.html` | `/contact.html` | Email and social links |
-| `gallery.html` | `/gallery.html` | Photo grid with lightbox (footer link; empty until photos are added) |
 
 ## Assets
 
