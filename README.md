@@ -11,8 +11,10 @@ Site files live in [`portfolio-main/`](portfolio-main/).
 | `index.html` | `/` | Homepage — intro |
 | `projects.html` | `/projects.html` | **Work** — experience list and project tiles (linked as "Work" in the nav) |
 | `projects/*.html` | `/projects/<slug>.html` | One page per project, opened from its tile on the Work page |
-| `resume.html` | `/resume.html` | Resume, linking `Channing_Chen_Resume.pdf` |
 | `contact.html` | `/contact.html` | Email and social links |
+
+The old Resume page is archived in [`archive/resume.html`](archive/resume.html), outside the deployed folder.
+To restore it, move it back into `portfolio-main/` and re-add the `Resume` link to each page's nav.
 
 ## Assets
 
