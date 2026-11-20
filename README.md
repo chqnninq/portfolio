@@ -9,9 +9,11 @@ Site files live in [`portfolio-main/`](portfolio-main/).
 | File | Route | What it is |
 | --- | --- | --- |
 | `index.html` | `/` | Homepage — intro |
-| `projects.html` | `/projects.html` | **Work** — experience list and project tiles (linked as "Work" in the nav) |
-| `projects/*.html` | `/projects/<slug>.html` | One page per project, opened from its tile on the Work page |
+| `portfolio.html` | `/portfolio.html` | **Portfolio** — experience list and project tiles (linked as "Portfolio" in the nav) |
+| `projects/*.html` | `/projects/<slug>.html` | One page per project, opened from its tile on the Portfolio page |
 | `contact.html` | `/contact.html` | Email and social links |
+| `writings.html` | `/writings.html` | **Writings** — blog index, linked from the footer next to LinkedIn and X |
+| `writings/*.html` | `/writings/<slug>.html` | One page per post. Start from [`templates/writing-post.html`](templates/writing-post.html), then add a line to `writings.html` |
 
 The old Resume page is archived in [`archive/resume.html`](archive/resume.html), outside the deployed folder.
 To restore it, move it back into `portfolio-main/` and re-add the `Resume` link to each page's nav.
@@ -19,7 +21,7 @@ To restore it, move it back into `portfolio-main/` and re-add the `Resume` link 
 ## Assets
 
 - `styles.css` — the whole design system. Light by default, dark via `prefers-color-scheme`.
-- `images/` — project photography used on the Work page.
+- `images/` — project photography used on the Portfolio page.
 - `public/profile.jpg`, `favicon.png` — portrait and favicon.
 - `header.html`, `header.js` — shared header partial. Each page inlines its own copy of this markup;
   `header.js` is available if you'd rather fetch it at runtime. Keep the two in sync when editing nav.

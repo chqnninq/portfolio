@@ -778,6 +778,40 @@ hr {
   color: var(--muted);
 }
 
+/* Writings index: one line per post, title left, date right */
+.writing-list {
+  list-style: none;
+  max-width: var(--measure);
+}
+
+.writing-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.25rem 2rem;
+  padding: 0.4rem 0;
+}
+
+.writing-item a {
+  font-weight: 500;
+}
+
+.writing-date {
+  font-size: 0.9375rem;
+  color: var(--faint);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.writing-empty {
+  color: var(--muted);
+}
+
+.site-footer a[aria-current='page'] {
+  color: var(--text);
+}
+
 /* Individual post */
 .blog-post {
   max-width: var(--measure);
