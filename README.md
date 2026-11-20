@@ -10,7 +10,7 @@ Site files live in [`portfolio-main/`](portfolio-main/).
 | --- | --- | --- |
 | `index.html` | `/` | Homepage — intro |
 | `portfolio.html` | `/portfolio.html` | **Portfolio** — experience list and project tiles (linked as "Portfolio" in the nav) |
-| `projects/*.html` | `/projects/<slug>.html` | One page per project, opened from its tile on the Portfolio page |
+| `portfolio/*.html` | `/portfolio/<slug>.html` | One page per project, opened from its tile on the Portfolio page |
 | `contact.html` | `/contact.html` | Email and social links |
 | `writings.html` | `/writings.html` | **Writings** — blog index, linked from the footer next to LinkedIn and X |
 | `writings/*.html` | `/writings/<slug>.html` | One page per post. Start from [`templates/writing-post.html`](templates/writing-post.html), then add a line to `writings.html` |
