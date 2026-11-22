@@ -51,6 +51,71 @@ body {
   font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
 }
 
+/* ---------------------------------------------------------------
+   Grained paper background (layers are added by paper.js)
+   The radial wash keeps the site's own colour; the grain is blended over it.
+   --------------------------------------------------------------- */
+
+:root {
+  --paper-0: #ffffff;
+  --paper-1: var(--bg);
+  --paper-2: #f8f8f5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper-0: #1a1a19;
+    --paper-1: var(--bg);
+    --paper-2: #0e0e0d;
+  }
+}
+
+body {
+  background: radial-gradient(circle at 20% 15%, var(--paper-0), var(--paper-1) 45%, var(--paper-2)) fixed;
+  min-height: 100vh;
+}
+
+.paper,
+.paper-ink {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.paper {
+  z-index: 0;
+  opacity: 0.3;
+  mix-blend-mode: multiply;
+  filter: brightness(1.1);
+}
+
+.paper-ink {
+  z-index: 2;
+  opacity: 0.38;
+  mix-blend-mode: screen;
+}
+
+@media (prefers-color-scheme: dark) {
+  .paper {
+    mix-blend-mode: screen;
+    opacity: 0.16;
+    filter: invert(1) brightness(1.6);
+  }
+
+  .paper-ink {
+    mix-blend-mode: multiply;
+    opacity: 0.3;
+    filter: invert(1);
+  }
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+
 ::selection {
   background: var(--text);
   color: var(--bg);
