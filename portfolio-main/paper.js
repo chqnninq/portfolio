@@ -9,9 +9,12 @@ import {
   paperTextureFragmentShader,
   getShaderColorFromString,
   getShaderNoiseTexture,
-  getEmptyPixel,
   ShaderFitOptions,
 } from 'https://cdn.jsdelivr.net/npm/@paper-design/shaders@0.0.80/+esm';
+
+// 1x1 transparent PNG: the texture is drawn without a source image
+const EMPTY_PIXEL =
+  'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=';
 
 const texture = {
   contrast: 0.3,
@@ -48,7 +51,7 @@ async function mount(className, colorBack, colorFront) {
 
   const [noise, empty] = await Promise.all([
     toImage(getShaderNoiseTexture()),
-    toImage(getEmptyPixel()),
+    toImage(EMPTY_PIXEL),
   ]);
 
   new ShaderMount(
