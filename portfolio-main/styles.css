@@ -394,14 +394,10 @@ hr {
   transition: transform 0.4s ease;
 }
 
-/* Tile whose image is cropped in 20%, anchored top right (crops away the bottom-left corner) */
-.project-tile--zoom img {
-  transform: scale(1.2);
-  transform-origin: right top;
-}
-
-.project-tile--zoom:hover img {
-  transform: scale(1.236);
+/* Tile pinned to its image's bottom-left corner: no zoom, the crop comes off the right edge only */
+.project-tile--bottom-left img {
+  object-position: left bottom;
+  transform-origin: left bottom;
 }
 
 .project-tile::after {
