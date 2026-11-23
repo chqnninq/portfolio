@@ -906,6 +906,12 @@ hr {
   color: var(--faint);
 }
 
+/* Standalone "Book a call" link, set apart below the contact list */
+.contact-call {
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+
 .contact-value {
   font-size: 1rem;
   overflow-wrap: anywhere;
