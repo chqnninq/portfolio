@@ -23,6 +23,7 @@ To restore it, move it back into `portfolio-main/` and re-add the `Resume` link 
 - `styles.css` — the whole design system. Light by default, dark via `prefers-color-scheme`.
 - `images/paper.jpg`, `images/paper-ink.jpg` — grained-paper background, applied in `styles.css` (pre-rendered from the [Paper Shaders](https://github.com/paper-design/shaders) paper texture). The page colour underneath comes from the `--paper-*` variables.
 - `images/` — project photography used on the Portfolio page.
+- `fonts/inter-latin.woff2` — Inter, self-hosted and preloaded on every page so text never draws in a fallback font first.
 - `public/profile.jpg`, `favicon.png` — portrait and favicon.
 - `header.html`, `header.js` — shared header partial. Each page inlines its own copy of this markup;
   `header.js` is available if you'd rather fetch it at runtime. Keep the two in sync when editing nav.

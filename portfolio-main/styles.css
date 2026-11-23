@@ -4,6 +4,17 @@
    so existing pages keep working; only their presentation changed.
    --------------------------------------------------------------- */
 
+/* Inter, self-hosted (variable font, latin subset, weights 100–900).
+   Preloaded in every page's <head>; "block" keeps text from drawing in a
+   fallback font first and re-wrapping when Inter arrives. */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: block;
+  src: url('/fonts/inter-latin.woff2') format('woff2');
+}
+
 :root {
   --bg: #fdfdfc;
   --text: #1c1c1a;
@@ -68,9 +79,9 @@ body {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --paper-0: #0d0d0c;
-    --paper-1: #060605;
-    --paper-2: #010100;
+    --paper-0: #121211;
+    --paper-1: #0a0a09;
+    --paper-2: #050504;
   }
 }
 
@@ -111,7 +122,7 @@ body::after {
 @media (prefers-color-scheme: dark) {
   body::before {
     mix-blend-mode: screen;
-    opacity: 0.16;
+    opacity: 0.26;
     filter: invert(1) brightness(1.6);
   }
 
