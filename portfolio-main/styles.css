@@ -281,7 +281,7 @@ hr {
 .site-header {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   gap: 1.5rem 2rem;
   flex-wrap: wrap;
   margin-bottom: 5rem;
@@ -297,6 +297,29 @@ hr {
 
 .site-name:hover {
   opacity: 0.6;
+}
+
+/* Signature in place of the name. The image is used as a mask filled with
+   the text colour, so it is dark in light mode and light in dark mode. */
+.site-signature {
+  display: block;
+  width: 6.75rem;
+  height: 3.5rem;
+  background-color: currentColor;
+  -webkit-mask: url('/images/signature.png') left center / contain no-repeat;
+  mask: url('/images/signature.png') left center / contain no-repeat;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .site-nav {
@@ -1157,6 +1180,11 @@ hr {
 
   .site-name {
     font-size: 1.125rem;
+  }
+
+  .site-signature {
+    width: 5.75rem;
+    height: 3rem;
   }
 
   .intro h1 {
