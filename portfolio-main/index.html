@@ -25,15 +25,6 @@
   </script>
   <script src="/theme.js" defer></script>
   <script src="/music.js" defer></script>
-  <script>
-    // Play the opening fade-in once per browser session
-    try {
-      if (!sessionStorage.getItem('intro-played')) {
-        document.documentElement.dataset.intro = '';
-        sessionStorage.setItem('intro-played', '1');
-      }
-    } catch (e) {}
-  </script>
 </head>
 
 <body>
