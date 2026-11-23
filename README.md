@@ -21,7 +21,7 @@ To restore it, move it back into `portfolio-main/` and re-add the `Resume` link 
 ## Assets
 
 - `styles.css` — the whole design system. Light by default, dark via `prefers-color-scheme`.
-- `paper.js` — grained-paper background, loaded on every page. Draws the [Paper Shaders](https://github.com/paper-design/shaders) paper texture (pinned to 0.0.80 on jsDelivr) over the page colour from `styles.css`.
+- `images/paper.jpg`, `images/paper-ink.jpg` — grained-paper background, applied in `styles.css` (pre-rendered from the [Paper Shaders](https://github.com/paper-design/shaders) paper texture). The page colour underneath comes from the `--paper-*` variables.
 - `images/` — project photography used on the Portfolio page.
 - `public/profile.jpg`, `favicon.png` — portrait and favicon.
 - `header.html`, `header.js` — shared header partial. Each page inlines its own copy of this markup;
