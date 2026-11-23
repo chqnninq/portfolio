@@ -25,6 +25,7 @@ To restore it, move it back into `portfolio-main/` and re-add the `Resume` link 
 - `images/paper.jpg`, `images/paper-ink.jpg` — grained-paper background, applied in `styles.css` (pre-rendered from the [Paper Shaders](https://github.com/paper-design/shaders) paper texture). The page colour underneath comes from the `--paper-*` variables.
 - `images/` — project photography used on the Portfolio page.
 - Homepage fade-in — elements with class `reveal` and `style="--i:N"` fade in one after another (100 ms apart) on the first homepage visit of a browser session; the flag is set by a small inline script in `index.html`'s `<head>`.
+- `music.js` + the `.music` block at the top of each page — the song player in the top left. It links to the track on Spotify and plays Spotify's 30-second preview (`data-preview`). To change the song, edit the link, title, artist and `data-preview` URL in each page.
 - `fonts/inter-latin.woff2` — Inter, self-hosted and preloaded on every page so text never draws in a fallback font first.
 - `public/profile.jpg`, `favicon.png` — portrait and favicon.
 - `header.html`, `header.js` — shared header partial. Each page inlines its own copy of this markup;
