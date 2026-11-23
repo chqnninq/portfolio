@@ -24,6 +24,8 @@ To restore it, move it back into `portfolio-main/` and re-add the `Resume` link 
 - `theme.js` + the small inline script in each page's `<head>` — the light/dark switch in the top right. The inline script applies the saved choice (or the system setting) before the page draws; `theme.js` handles clicks and saves the choice in `localStorage`. New pages need both, plus the `.theme-toggle` button markup (copy from any page).
 - `images/paper.jpg`, `images/paper-ink.jpg` — grained-paper background, applied in `styles.css` (pre-rendered from the [Paper Shaders](https://github.com/paper-design/shaders) paper texture). The page colour underneath comes from the `--paper-*` variables.
 - `images/` — project photography used on the Portfolio page.
+- `particles.js` — the interactive particle cloud behind the homepage (plain canvas, no library). Loaded only by `index.html`.
+- Homepage fade-in — elements with class `reveal` and `style="--i:N"` fade in one after another (100 ms apart) on the first homepage visit of a browser session; the flag is set by a small inline script in `index.html`'s `<head>`.
 - `fonts/inter-latin.woff2` — Inter, self-hosted and preloaded on every page so text never draws in a fallback font first.
 - `public/profile.jpg`, `favicon.png` — portrait and favicon.
 - `header.html`, `header.js` — shared header partial. Each page inlines its own copy of this markup;
