@@ -1259,7 +1259,8 @@ hr {
   }
 
   .container {
-    padding: 2.5rem var(--gutter) 4rem;
+    /* extra top room so the header clears the song player and theme switch */
+    padding: 4.5rem var(--gutter) 4rem;
   }
 
   .site-header {
