@@ -20,7 +20,8 @@ To restore it, move it back into `portfolio-main/` and re-add the `Resume` link 
 
 ## Assets
 
-- `styles.css` — the whole design system. Light by default, dark via `prefers-color-scheme`.
+- `styles.css` — the whole design system. Light and dark themes, keyed off `<html data-theme>`.
+- `theme.js` + the small inline script in each page's `<head>` — the light/dark switch in the top right. The inline script applies the saved choice (or the system setting) before the page draws; `theme.js` handles clicks and saves the choice in `localStorage`. New pages need both, plus the `.theme-toggle` button markup (copy from any page).
 - `images/paper.jpg`, `images/paper-ink.jpg` — grained-paper background, applied in `styles.css` (pre-rendered from the [Paper Shaders](https://github.com/paper-design/shaders) paper texture). The page colour underneath comes from the `--paper-*` variables.
 - `images/` — project photography used on the Portfolio page.
 - `fonts/inter-latin.woff2` — Inter, self-hosted and preloaded on every page so text never draws in a fallback font first.

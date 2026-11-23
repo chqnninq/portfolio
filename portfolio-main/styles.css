@@ -29,17 +29,16 @@
   --gutter: 1.5rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #131312;
-    --text: #e9e8e3;
-    --muted: #97968e;
-    --faint: #6f6e67;
-    --rule: #2a2a27;
-    --rule-soft: #201f1d;
-    --surface: #1b1b19;
-  }
+:root[data-theme='dark'] {
+  --bg: #131312;
+  --text: #e9e8e3;
+  --muted: #97968e;
+  --faint: #6f6e67;
+  --rule: #2a2a27;
+  --rule-soft: #201f1d;
+  --surface: #1b1b19;
 }
+
 
 * {
   margin: 0;
@@ -77,13 +76,12 @@ body {
   --paper-2: #fcfcfa;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --paper-0: #121211;
-    --paper-1: #0a0a09;
-    --paper-2: #050504;
-  }
+:root[data-theme='dark'] {
+  --paper-0: #121211;
+  --paper-1: #0a0a09;
+  --paper-2: #050504;
 }
+
 
 html {
   background-color: var(--paper-1);
@@ -119,19 +117,81 @@ body::after {
   mix-blend-mode: screen;
 }
 
-@media (prefers-color-scheme: dark) {
-  body::before {
-    mix-blend-mode: screen;
-    opacity: 0.26;
-    filter: invert(1) brightness(1.6);
-  }
+:root[data-theme='dark'] body::before {
+  mix-blend-mode: screen;
+  opacity: 0.26;
+  filter: invert(1) brightness(1.6);
+}
 
-  body::after {
-    mix-blend-mode: multiply;
-    opacity: 0.3;
-    filter: invert(1);
+:root[data-theme='dark'] body::after {
+  mix-blend-mode: multiply;
+  opacity: 0.3;
+  filter: invert(1);
+}
+
+/* ---------------------------------------------------------------
+   Theme switch (top right). The inline script in each page's <head>
+   sets data-theme before first paint; theme.js handles clicks.
+   --------------------------------------------------------------- */
+
+:root {
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 0.9375rem;
+  right: 1.25rem;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 0;
+  border-radius: 0.375rem;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  color: var(--text);
+  background-color: var(--surface);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+.theme-toggle svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+/* Sun in dark mode (click for light), moon in light mode (click for dark) */
+.theme-toggle .icon-sun,
+:root[data-theme='dark'] .theme-toggle .icon-moon {
+  display: none;
+}
+
+:root[data-theme='dark'] .theme-toggle .icon-sun {
+  display: block;
+}
+
+@media (max-width: 40rem) {
+  .theme-toggle {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.75rem;
   }
 }
+
 
 .container {
   position: relative;
@@ -264,12 +324,11 @@ hr {
   border-radius: 2px;
 }
 
-@media (prefers-color-scheme: dark) {
-  .inline-logo {
-    background: #fff;
-    padding: 1px;
-  }
+:root[data-theme='dark'] .inline-logo {
+  background: #fff;
+  padding: 1px;
 }
+
 
 /* One line less space between the intro and the footer */
 .intro + .site-footer {
