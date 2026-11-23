@@ -16,13 +16,13 @@
 }
 
 :root {
-  --bg: #fdfdfc;
+  --bg: #f0eee6;        /* White Dove */
   --text: #1c1c1a;
   --muted: #74736d;
   --faint: #9a998f;
-  --rule: #e6e5df;
-  --rule-soft: #f0efe9;
-  --surface: #f6f5f0;
+  --rule: #dad7cc;
+  --rule-soft: #e4e1d7;
+  --surface: #e7e4da;
 
   --measure: 34rem;      /* comfortable reading width */
   --container: 44rem;    /* page width, images may fill this */
@@ -71,9 +71,9 @@ body {
    --------------------------------------------------------------- */
 
 :root {
-  --paper-0: #ffffff;
-  --paper-1: #ffffff;
-  --paper-2: #fcfcfa;
+  --paper-0: #f6f4ec;
+  --paper-1: #f3f1e9;
+  --paper-2: #eeece4;
 }
 
 :root[data-theme='dark'] {
@@ -127,6 +127,14 @@ body::after {
   mix-blend-mode: multiply;
   opacity: 0.3;
   filter: invert(1);
+}
+
+/* No transitions while a page is loading (flag set in each page's <head>,
+   cleared by theme.js), so styles picked up on arrival don't fade in. */
+:root[data-loading] *,
+:root[data-loading] *::before,
+:root[data-loading] *::after {
+  transition: none !important;
 }
 
 /* ---------------------------------------------------------------

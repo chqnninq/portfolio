@@ -3,6 +3,20 @@
 // file only handles clicks and keeps the button label in sync.
 (function () {
   var root = document.documentElement;
+
+  // Transitions stay off while the page loads (see :root[data-loading] in
+  // styles.css), so a hover style picked up on arrival — e.g. the cursor still
+  // resting on the link just clicked — snaps on instead of visibly fading in.
+  function doneLoading() {
+    requestAnimationFrame(function () {
+      setTimeout(function () {
+        delete root.dataset.loading;
+      }, 150);
+    });
+  }
+  if (document.readyState === 'complete') doneLoading();
+  else window.addEventListener('load', doneLoading);
+
   var button = document.querySelector('.theme-toggle');
   if (!button) return;
 
