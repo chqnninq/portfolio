@@ -129,17 +129,6 @@ body::after {
   filter: invert(1);
 }
 
-/* Interactive particle cloud (homepage; drawn by particles.js).
-   Sits between the paper grain and the content. */
-.particles {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-}
-
 /* Opening fade-in (homepage, first visit of a browser session).
    Each .reveal element fades in over 1s, 100ms after the previous one.
    The inline script in index.html sets data-intro once per session. */
@@ -892,33 +881,6 @@ hr {
 /* ---------------------------------------------------------------
    Contact
    --------------------------------------------------------------- */
-
-/* "Book a call" button under the Contact heading (opens cal.com in a new tab) */
-.book-call {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 1.25rem;
-  padding: 0.5rem 0.95rem;
-  border: 1px solid var(--rule);
-  border-radius: 0.5rem;
-  background: var(--bg);
-  font-size: 0.9375rem;
-  font-weight: 500;
-  line-height: 1.4;
-  text-decoration: none;
-}
-
-.book-call:hover {
-  background: var(--surface);
-  border-color: var(--faint);
-}
-
-.book-call svg {
-  width: 1rem;
-  height: 1rem;
-  color: var(--muted);
-}
 
 .contact-list {
   max-width: var(--measure);
