@@ -1,13 +1,21 @@
-// Videos marked data-hover-play stay on their poster frame and play only while
-// the pointer is over them (or over the tile that contains them).
+// Videos marked data-hover-play rest on their final frame (the poster). Hovering
+// plays them from the start; they stop on the last frame, and leaving jumps back
+// to it.
 (function () {
   document.querySelectorAll('video[data-hover-play]').forEach(function (video) {
     var target = video.closest('a, figure') || video;
-    function play() { var p = video.play(); if (p && p.catch) p.catch(function () {}); }
-    function stop() { video.pause(); video.currentTime = 0; }
+    function play() {
+      video.currentTime = 0;
+      var p = video.play();
+      if (p && p.catch) p.catch(function () {});
+    }
+    function rest() {
+      video.pause();
+      if (video.duration) video.currentTime = Math.max(0, video.duration - 0.05);
+    }
     target.addEventListener('mouseenter', play);
-    target.addEventListener('mouseleave', stop);
+    target.addEventListener('mouseleave', rest);
     target.addEventListener('focus', play);
-    target.addEventListener('blur', stop);
+    target.addEventListener('blur', rest);
   });
 })();

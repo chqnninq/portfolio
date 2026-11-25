@@ -24,7 +24,7 @@ To restore it, move it back into `portfolio-main/` and re-add the `Resume` link 
 - `theme.js` + the small inline script in each page's `<head>` — the light/dark switch in the top right. The inline script applies the saved choice (or the system setting) before the page draws; `theme.js` handles clicks and saves the choice in `localStorage`. New pages need both, plus the `.theme-toggle` button markup (copy from any page).
 - `images/paper.jpg`, `images/paper-ink.jpg` — grained-paper background, applied in `styles.css` (pre-rendered from the [Paper Shaders](https://github.com/paper-design/shaders) paper texture). The page colour underneath comes from the `--paper-*` variables.
 - `images/` — project photography used on the Portfolio page.
-- `hover-video.js` — videos marked `data-hover-play` (e.g. the Colare tile) show their poster frame and play only while hovered. Give each one a `poster` still and `muted loop playsinline`.
+- `hover-video.js` — videos marked `data-hover-play` (e.g. the Colare tile) rest on their final frame and play from the start while hovered. Give each one a `poster` (its last frame) and `muted playsinline`.
 - Fade-in — on every page load, elements with class `reveal` and `style="--i:N"` fade in one after another (100 ms apart); the top bar stays put. Give new pages' content blocks the same class and numbering.
 - `music.js` + the `.music` block at the top of each page — the song player in the top left. It links to the track on Spotify and plays Spotify's 30-second preview (`data-preview`). To change the song, edit the link, title, artist and `data-preview` URL in each page.
 - `fonts/inter-latin.woff2` — Inter, self-hosted and preloaded on every page so text never draws in a fallback font first.
