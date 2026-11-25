@@ -26,6 +26,7 @@ To restore it, move it back into `portfolio-main/` and re-add the `Resume` link 
 - `images/` — project photography used on the Portfolio page.
 - Fade-in — on every page load, elements with class `reveal` and `style="--i:N"` fade in one after another (100 ms apart); the top bar stays put. Give new pages' content blocks the same class and numbering.
 - `music.js` + the `.music` block at the top of each page — the song player in the top left. It links to the track on Spotify and plays Spotify's 30-second preview (`data-preview`). To change the song, edit the link, title, artist and `data-preview` URL in each page.
+- `cursor.js` — the Stardust cursor (a twinkling star with a sparkle trail) that replaces the mouse pointer on mouse/trackpad devices. Styles under "Stardust cursor" in `styles.css`; colours come from `--ink-2`/`--ink-3` on `.cur`. The original standalone demo is in `experiments/` (not deployed).
 - `fonts/inter-latin.woff2` — Inter, self-hosted and preloaded on every page so text never draws in a fallback font first.
 - `public/profile.jpg`, `favicon.png` — portrait and favicon.
 - `CNAME` — custom domain (`channingchen.me`).
