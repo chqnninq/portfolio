@@ -691,7 +691,9 @@ hr {
   text-decoration: none;
 }
 
-.project-tile img {
+.project-tile img,
+.project-tile video {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -712,7 +714,8 @@ hr {
   transition: background-color 0.25s ease;
 }
 
-.project-tile:hover img {
+.project-tile:hover img,
+.project-tile:hover video {
   transform: scale(1.03);
 }
 
@@ -761,7 +764,9 @@ hr {
   max-width: none;
 }
 
-.project-figure img {
+.project-figure img,
+.project-figure video {
+  display: block;
   width: 100%;
   border-radius: 2px;
   background: var(--surface);
