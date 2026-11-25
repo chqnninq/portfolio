@@ -143,6 +143,13 @@ body::after {
   animation-delay: calc(var(--i, 0) * 100ms);
 }
 
+/* Portfolio page: items share --i in pairs (two per step), with a slower
+   fade and a longer gap between steps. */
+.reveal-pairs .reveal {
+  animation-duration: 1.3s;
+  animation-delay: calc(var(--i, 0) * 250ms);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 1;

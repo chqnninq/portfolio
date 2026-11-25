@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stardust Cursor</title>
+  <style>
+    /* ---------- Demo page shell (not part of the effect) ---------- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      --text-secondary: #74736d; /* used by .cur-hint */
+      background: #131312;
+      color: #e9e8e3;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      display: grid;
+      place-items: center;
+      padding: 16px;
+    }
+    .stage {
+      width: min(640px, 100%);
+      height: min(420px, 70vh);
+      border: 1px solid #2a2a27;
+      border-radius: 12px;
+    }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+    /* ---------- Stardust cursor: CSS as specified ---------- */
+
+    /* Colour tokens — override to re-skin the cursor:
+       --ink    underlying text colour (defaults to currentColor)
+       --ink-2  primary accent   --ink-3  secondary accent */
+    :root { --ink: currentColor; --ink-2: #FF4FD8; --ink-3: #4FF8FF; }
+
+    @property --x { syntax: '<length-percentage>'; inherits: true; initial-value: 50%; }
+    @property --y { syntax: '<length-percentage>'; inherits: true; initial-value: 50%; }
+    @property --angle { syntax: '<angle>'; inherits: true; initial-value: 0deg; }
+    @property --speed { syntax: '<number>'; inherits: true; initial-value: 0; }
+
+    .cur {
+      --c: var(--ink-2);   /* cursor primary colour  */
+      --c2: var(--ink-3);  /* cursor accent colour   */
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      cursor: none;
+      touch-action: none;
+    }
+
+    /* "hover" affordance — fades out once the pointer is inside */
+    .cur-hint {
+      color: color-mix(in srgb, var(--text-secondary) 55%, transparent);
+      font-size: 11px;
+      letter-spacing: 0.24em;
+      transition: opacity 0.3s;
+      pointer-events: none;
+    }
+    .cur.is-active .cur-hint { opacity: 0; }
+
+    /* underlying content — only revealed by the effects that act on it */
+    .cur-word {
+      display: none;
+      font: 600 30px/1 "JetBrains Mono", monospace;
+      letter-spacing: 0.08em;
+      color: var(--ink);
+      pointer-events: none;
+      user-select: none;
+    }
+    .cur-blend .cur-word,
+    .cur-spotlight .cur-word,
+    .cur-magnet .cur-word { display: block; }
+
+    /* the follower — positioned from --x/--y, eased with a transition */
+    .cursor {
+      position: absolute;
+      left: var(--x);
+      top: var(--y);
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--c);
+      transform: translate(-50%, -50%);
+      transition: left 0.16s cubic-bezier(0.22, 1, 0.36, 1),
+                  top 0.16s cubic-bezier(0.22, 1, 0.36, 1);
+      pointer-events: none;
+      will-change: left, top;
+    }
+
+    /* ---------- The cursors ----------
+       Each cursor paints with two tokens so a copied snippet can be re-skinned:
+         --ink-2  primary accent (hot magenta)   --ink-3  secondary (electric cyan)
+       Ambient keyframes are cur-prefixed to stay collision-free. */
+
+    /* 20 Stardust — a twinkling star shedding a trail of sparkles */
+    .cur-sparkle .cursor {
+      width: calc(15px - var(--i) * 2px);
+      height: calc(15px - var(--i) * 2px);
+      background: var(--c);
+      clip-path: polygon(50% 0, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0 50%, 39% 39%);
+      transition-duration: calc(0.1s + var(--i) * 0.07s);
+      opacity: calc(1 - var(--i) * 0.16);
+      animation: cur-twinkle 1.2s ease-in-out infinite;
+      animation-delay: calc(var(--i) * 0.15s);
+    }
+    @keyframes cur-twinkle {
+      0%, 100% { transform: translate(-50%, -50%) scale(1) rotate(0); }
+      50%      { transform: translate(-50%, -50%) scale(0.55) rotate(45deg); }
+    }
+
+    /* Reduced motion: no ambient twinkle */
+    @media (prefers-reduced-motion: reduce) {
+      .cur-sparkle .cursor { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <div class="cur cur-sparkle" data-cursor="sparkle" role="img" aria-label="Stardust cursor demo"><span class="cur-hint mono" aria-hidden="true">hover</span><span class="cur-word" aria-hidden="true"></span><i class="cursor" style="--i:0"></i><i class="cursor" style="--i:1"></i><i class="cursor" style="--i:2"></i><i class="cursor" style="--i:3"></i><i class="cursor" style="--i:4"></i></div>
+  </div>
+
+  <script>
+    // Universal pointer tracker — attach to each .cur box. Writes --x/--y/--angle/
+    // --speed and toggles .is-active (pointer inside) and .is-near (near centre,
+    // used by the magnetic cursor). Everything else is pure CSS.
+    function bindCursor(box) {
+      let lx = 0, ly = 0, has = false, idle;
+      const set = (p, v) => box.style.setProperty(p, v);
+      box.addEventListener('pointermove', (e) => {
+        const r = box.getBoundingClientRect();
+        const x = e.clientX - r.left, y = e.clientY - r.top;
+        if (has) {
+          const dx = x - lx, dy = y - ly, d = Math.hypot(dx, dy);
+          if (d > 0.5) set('--angle', Math.atan2(dy, dx).toFixed(3) + 'rad');
+          set('--speed', Math.min(1, d / 32).toFixed(3));
+        }
+        set('--x', x.toFixed(1) + 'px');
+        set('--y', y.toFixed(1) + 'px');
+        box.classList.toggle('is-near', Math.hypot(x - r.width / 2, y - r.height / 2) < 60);
+        box.classList.add('is-active');
+        lx = x; ly = y; has = true;
+        clearTimeout(idle);
+        idle = setTimeout(() => set('--speed', '0'), 120); // relax when the pointer stops
+      });
+      box.addEventListener('pointerleave', () => {
+        box.classList.remove('is-active', 'is-near');
+        set('--speed', '0');
+        has = false;
+      });
+    }
+    document.querySelectorAll('.cur').forEach(bindCursor);
+  </script>
+</body>
+</html>
