@@ -271,8 +271,9 @@ html.has-stardust * {
   height: calc(15px - var(--i) * 2px);
   background: var(--c);
   clip-path: polygon(50% 0, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0 50%, 39% 39%);
-  transition-duration: calc(0.1s + var(--i) * 0.07s);
-  opacity: calc(1 - var(--i) * 0.16);
+  /* short, faint trail (the demo used 0.1s + i*0.07s and 1 - i*0.16, with 5 stars) */
+  transition-duration: calc(0.08s + var(--i) * 0.04s);
+  opacity: calc(1 - var(--i) * 0.38);
   animation: cur-twinkle 1.2s ease-in-out infinite;
   animation-delay: calc(var(--i) * 0.15s);
 }

@@ -10,7 +10,7 @@
   var box = document.createElement('div');
   box.className = 'cur cur-sparkle cur-site';
   box.setAttribute('aria-hidden', 'true');
-  for (var i = 0; i < 5; i++) {
+  for (var i = 0; i < 3; i++) { // the star + 2 trailing sparkles
     var star = document.createElement('i');
     star.className = 'cursor';
     star.style.setProperty('--i', i);
