@@ -481,6 +481,12 @@ hr {
   border-radius: 3px;
 }
 
+/* Dark logos (Colare) get a white backing in dark mode so they stay visible */
+:root[data-theme='dark'] .inline-logo--backed {
+  background: #fff;
+  padding: 1px;
+}
+
 
 /* One line less space between the intro and the footer */
 .intro + .site-footer {
