@@ -1,6 +1,6 @@
 # portfolio
 
-Personal site for Channing Chen. Static HTML/CSS, no build step, no framework.
+My personal portfolio 
 
 Site files live in [`portfolio-main/`](portfolio-main/).
 
@@ -36,5 +36,3 @@ To restore it, move it back into `portfolio-main/` and re-add the `Resume` link 
 - Content width is set by two variables in `styles.css`: `--measure` (text) and `--container` (page/images).
 - Project images go full container width. Add `project-figure--narrow` to a `<figure>` for low-resolution
   images so they don't get upscaled.
-
-Originally built from [Tanmay Hinge's](https://tanmayhinge.com) portfolio template, used with permission.
